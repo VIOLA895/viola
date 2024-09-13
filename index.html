@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viola Kambuni</title>
+    <link rel="icon" href="images/vv.png" type="image/png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        // Initialize EmailJS with the public key
+        emailjs.init("AT9WkfG3gTlGLhZGI"); // Replace with your actual public key
+      })();
+    </script>
+    
+    <script type="text/javascript">
+      window.onload = function () {
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+          event.preventDefault(); // Prevent the default form submission
+    
+          // Send the form using EmailJS
+          emailjs.sendForm('contact_service', 'contact_form', this).then(
+            function () {
+              showResponse('Success! Your message has been sent.', 'success');
+            },
+            function (error) {
+              showResponse('Failed to send the message. Please try again.', 'error');
+              console.error('FAILED...', error);
+            }
+          );
+        });
+      };
+    
+      // Function to display response messages
+      function showResponse(message, type) {
+        const responseContainer = document.createElement('div');
+        responseContainer.className = `response-message ${type}`; // Add class based on response type
+        responseContainer.textContent = message;
+    
+        // Append response message to the form container
+        const formContainer = document.querySelector('.form-container');
+        formContainer.appendChild(responseContainer);
+    
+        // Remove the message after 5 seconds
+        setTimeout(() => {
+          responseContainer.remove();
+        }, 5000);
+      }
+    </script>
+    
+</head>
+
+<body>
+    <!-- Header section -->
+    <header class="header">
+        <a href="#" class="logo">Viola.</a>
+    
+     <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class='bx bx-menu'></i></label>
+        
+        <!-- navigation bar -->
+        <nav class="navbar">
+                <a href="#" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+        </nav>
+       
+    </header>
+    <!-- home section -->
+    <section class="home">
+        <div class="home-content">
+            <h2>Hello </h2>
+            <h1>I'm Viola Kambuni </h1>
+            <h3>Web Developer</h3>
+            <div class="btn-container">
+                <a href="#" class="btn">Hire Me</a>
+                <a href="Violai_CV_3.docx" class="btn"database="true">Download CV</a>
+            </div>
+        </div>
+        <!-- image on home page -->
+        <div class="image">
+            <img src="images/vee.jpg" alt="Viola">
+        </div>
+
+    </section>
+    <!-- about section -->
+    <section id="about" class="about">
+        <div class="about-image">
+            <img src="images/file.png" >
+            </div>
+     <div class="about-content">
+        <h2>About Me</h2>
+        <p>As a web designer, I specialize in creating intuitive and visually appealing user experiences using HTML, CSS, and JavaScript.<br> I excel at problem-solving and thrive in collaborative environments, working with clients and teams to deliver responsive, modern designs that look great on all devices.<br> My portfolio demonstrates my adaptability and commitment to balancing aesthetics with functionality, ensuring each website effectively represents the client's brand.</p>
+     </div>
+    </section>
+    <!-- skills section -->
+     <section id="skills" class="skills">
+    <div class="skills">
+        <i class='bx bxl-html5' style='color:#ffa500'></i>
+        <i class='bx bxl-css3' style='color:#086fe6'></i>
+        <i class='bx bxl-javascript' style='color:#d4e608'></i>
+        <i class='bx bxl-c-plus-plus' style='color:#009bff'  ></i>
+        <img src="https://img.icons8.com/?size=100&id=vgMoO3QkEnKf&format=png&color=000000" alt="VB">
+        <img src="images/C-removebg-preview.png" alt="C">
+    </div>
+    </section>
+
+    <!-- projects section -->
+    <section id="projects" class="projects">
+<!-- cards for projects done  -->
+    <h2>My Projects</h2>
+  <div class="card-container">
+   
+    <a href="https://anneofgreengables-f5d8f.web.app/" target="_blank" class="card">
+        <div class="card-image">
+                    <img src="images/anne.jpg" alt="Anne">
+                    </div>
+        <div class="card-content">
+            <h2 >Anne of Green Gables</h2>
+            <p>A summary on an orphan girl by Lucy Montgomery Burns.</p>
+        </div>
+    </a>
+
+    <a href="https://hardstone-psycho-33cc9.web.app/" target="_blank" class="card">
+        <div class="card-image">
+        <img src="images/hardstone.jpeg" alt="Hardstone">
+        </div>
+        <div class="card-content">
+            <h2>Hardstone Psycho</h2>
+            <p>This is an album by Don Toliver debutted in 2024.</p>
+        </div>
+    </a>
+
+    <a href="https://github.com/VIOLA895/recipe" target="_blank" class="card">
+        <div class="card-image">
+        <img src="images/Nigerian-chicken-stew-1.jpg" alt="chicken stew">
+        </div>
+        <div class="card-content">
+            <h2>Chicken Stew Recipe</h2>
+            <p>This is a recipe for chicken stew.</p>
+        </div>
+    </a>
+   </div>
+
+    </section>
+
+     <!-- contact section -->
+      <section id="contact" class="contact">
+         <div class="contact-content">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <p><i class='bx bxl-gmail'></i>kambuniviola@gmail.com</p>
+            <p><i class='bx bxs-phone' ></i>+254740896780</p>
+            <p><i class='bx bxs-location-plus' ></i></i>Nairobi, Kenya</p>
+        </div>
+        <div class="form-container">
+        <form id="contact-form" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="name@example.com" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        </div>
+        </div>
+     </section>
+
+     <!-- footer -->
+    <footer>
+        <p>&copy;2024 Viola Kambuni. All rights reserved.</p>
+        <div class="footer-icons">
+            <i class='bx bxl-twitter'></i>
+            <a href="https://wa.me/+254772616719" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+            <a href="https://www.linkedin.com/in/viola-kambuni-4bb48631b" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://www.instagram.com/_theyluvvvee" target="_blank"><i class='bx bxl-instagram'></i></a>
+        </div>
+    </footer>
+    <button id="scrollToTopBtn" title="Go to top"><i class='bx bxs-chevrons-up'></i></button>
+
+    <script src="index.js"></script>
+</body>
+</html>
